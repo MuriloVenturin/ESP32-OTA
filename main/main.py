@@ -9,7 +9,7 @@ def download_and_install_update_if_available():
 def start():
   led = Pin(2, Pin.OUT)
   while True:
-    led.value(1)
+    led.value(0)
     sleep(0.5)
 
 def boot():
