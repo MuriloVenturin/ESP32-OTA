@@ -9,6 +9,7 @@ def download_and_install_update_if_available():
 def start():
   led = Pin(2, Pin.OUT)
   while True:
+  	print(ok)
     led.value(not led.value())
     sleep(0.5)
 
