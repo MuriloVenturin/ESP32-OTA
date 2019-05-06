@@ -103,8 +103,10 @@ class OTAUpdater:
         os.rmdir(directory)
 
     def get_version(self, directory, version_file_name='.version'):
+        print(directory)
         if version_file_name in os.listdir(directory):
-            f = open(directory + '/' + version_file_name)
+            directory = directory + '/' + version_file_name 
+            f = open(directory)
             version = f.read()
             f.close()
             return version
@@ -113,6 +115,7 @@ class OTAUpdater:
     def get_latest_version(self):
         latest_release = self.http_client.get(self.github_repo + '/releases/latest')
         version = latest_release.json()['tag_name']
+        print(version)
         latest_release.close()
         return version
 
