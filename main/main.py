@@ -7,7 +7,7 @@ o = OTAUpdater('https://github.com/MuriloVenturin/ESP32-OTA', main_dir = 'main')
 
 def download_and_install_update_if_available():
 	global o
-	o.download_and_install_update_if_available('RunPal-GUEST', 'runpalbr')
+	o.download_and_install_update_if_available('NET_2GF0E80D', '69F0E80D')
   
 def start():
 	global o
@@ -20,7 +20,7 @@ def start():
 def boot():
 	global o
 	
-	o.using_network('RunPal-GUEST', 'runpalbr')
+	o.using_network('NET_2GF0E80D', '69F0E80D')
 	o.check_for_update_to_install_during_next_reboot()
 	download_and_install_update_if_available()
 	start()
