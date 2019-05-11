@@ -15,10 +15,8 @@ def start():
 	led2 = Pin(33, Pin.OUT)
 
 	while True:  
-		led1.value(not led2.value())
-		sleep(0.5)
-		led2.value(not led1.value())
-		sleep(0.5)
+		led1.value(not led1.value())
+		sleep(2)
 
 def boot():
 	global o
