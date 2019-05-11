@@ -11,20 +11,25 @@ def download_and_install_update_if_available():
   
 def start():
 	global o
-	led = Pin(2, Pin.OUT)
+	led1 = Pin(32, Pin.OUT)
+	led2 = Pin(33, Pin.OUT)
+	led3 = Pin(34, Pin.OUT)
 
 	while True:  
-		led.value(not led.value())
+		led1.value(not led2.value())
+		sleep(0.5)
+		led2.value(not led3.value())
+		sleep(0.5)
+		led3.value(not led1.value())
 		sleep(0.5)
 
 def boot():
 	global o
 	
-	o.using_network('NET_2GF0E80D', '69F0E80D')
+	o.using_network('labtvdi', 'wifi$labtvdi')
 	o.check_for_update_to_install_during_next_reboot()
 	download_and_install_update_if_available()
 	start()
 	boot()
 
 boot()
-
